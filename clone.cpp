@@ -120,3 +120,4 @@
         chatHistory.innerHTML += `<p><strong>AI:</strong> ${data.reply}</p>`;
     }
 </script>
+const apiUrl = 'http://localhost:5000/api';
