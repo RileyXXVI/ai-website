@@ -97,3 +97,26 @@
     </script>
 </body>
 </html>
+<section id="chat-box">
+    <h2>Chat with Your Character</h2>
+    <textarea id="userMessage" placeholder="Say something..."></textarea>
+    <button onclick="sendMessage()">Send</button>
+    <div id="chatHistory"></div>
+</section>
+<script>
+    async function sendMessage() {
+        const message = document.getElementById("userMessage").value;
+        const characterPrompt = "Your character's personality goes here"; // Update dynamically if needed
+
+        const response = await fetch('http://localhost:5000/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message, characterPrompt }),
+        });
+
+        const data = await response.json();
+        const chatHistory = document.getElementById("chatHistory");
+        chatHistory.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
+        chatHistory.innerHTML += `<p><strong>AI:</strong> ${data.reply}</p>`;
+    }
+</script>
