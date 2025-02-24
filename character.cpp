@@ -121,3 +121,4 @@
     }
 </script>
 const apiUrl = 'http://localhost:5000/api';
+const apiUrl = 'https://your-repl-name.replit.app/api';
