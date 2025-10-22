@@ -1,0 +1,1 @@
+A minimal AI chat MVP combining a Next.js frontend and a FastAPI backend. Instructions: - Set OPENAI_API_KEY in backend/.env - Start backend: python -m uvicorn backend.app.main:app --reload - Start frontend: cd frontend && npm install && npm run dev 
